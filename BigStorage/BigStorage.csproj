@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -25,60 +25,136 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <GameFolder>C:\Program Files (x86)\Steam\steamapps\common\OxygenNotIncluded</GameFolder>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\OxygenNotIncluded\OxygenNotIncluded_Data\Managed\0Harmony.dll</HintPath>
-    </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\OxygenNotIncluded\OxygenNotIncluded_Data\Managed\Assembly-CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\OxygenNotIncluded\OxygenNotIncluded_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="PLib, Version=4.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PLib.4.7.0\lib\net471\PLib.dll</HintPath>
-    </Reference>
+    <Reference Include="0Harmony" HintPath="$(GameFolder)\OxygenNotIncluded_Data\Managed\0Harmony.dll" />
+    <Reference Include="Assembly-CSharp" HintPath="$(GameFolder)\OxygenNotIncluded_Data\Managed\Assembly-CSharp.dll" />
+    <Reference Include="Assembly-CSharp-firstpass" HintPath="$(GameFolder)\OxygenNotIncluded_Data\Managed\Assembly-CSharp-firstpass.dll" />
+    <Reference Include="UnityEngine" HintPath="$(GameFolder)\OxygenNotIncluded_Data\Managed\UnityEngine.dll" />
+    <Reference Include="UnityEngine.CoreModule" HintPath="$(GameFolder)\OxygenNotIncluded_Data\Managed\UnityEngine.CoreModule.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\OxygenNotIncluded\OxygenNotIncluded_Data\Managed\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\OxygenNotIncluded\OxygenNotIncluded_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BigBeautifulStorageLockerConfig.cs" />
+    <Compile Include="BigSmartStorageLockerConfig.cs" />
     <Compile Include="BigStorageLockerConfig .cs" />
     <Compile Include="BigLiquidStorageConfig.cs" />
     <Compile Include="BigGasStorageConfig.cs" />
-    <Compile Include="BigStorageMod.cs" />
-    <Compile Include="CaiLib.Config.cs" />
-    <Compile Include="CaiLib.Logger.cs" />
-    <Compile Include="CaiLib.cs" />
-    <Compile Include="Config.cs" />
+    <Compile Include="BigStoragePatch.cs" />
+    <Compile Include="BigStorageConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
+    <None Include="anim\assets\bigbeautifulstoragelocker\bigbeautifulstoragelocker_anim.bytes">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="packages.config" />
+    <None Include="anim\assets\bigbeautifulstoragelocker\bigbeautifulstoragelocker_build.bytes">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="anim\assets\biggasstorage\biggasstorage_anim.bytes">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="anim\assets\biggasstorage\biggasstorage_build.bytes">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="anim\assets\bigliquidstorage\bigliquidstorage_anim.bytes">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="anim\assets\bigliquidstorage\bigliquidstorage_build.bytes">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="anim\assets\bigsmartstoragelocker\bigsmartstoragelocker_anim.bytes">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="anim\assets\bigsmartstoragelocker\bigsmartstoragelocker_build.bytes">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="anim\assets\bigstoragelocker\bigstoragelocker_anim.bytes">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="anim\assets\bigstoragelocker\bigstoragelocker_build.bytes">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="mod.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="mod_info.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="anim\assets\bigbeautifulstoragelocker\bigbeautifulstoragelocker_0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="anim\assets\biggasstorage\biggasstorage_0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="anim\assets\bigliquidstorage\bigliquidstorage_0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="anim\assets\bigsmartstoragelocker\bigsmartstoragelocker_0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="anim\assets\bigstoragelocker\bigstoragelocker_0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ILRepack">
+      <Version>2.0.18</Version>
+    </PackageReference>
+    <PackageReference Include="ILRepack.MSBuild.Task">
+      <Version>2.0.13</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="PLib">
+      <Version>4.13.0</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <WorkingDirectory>$(MSBuildThisFileDirectory)bin\$(Configuration)\$(TargetFramework)</WorkingDirectory>
+  </PropertyGroup>
+  <Target Name="ILRepack" AfterTargets="Build">
+    <ItemGroup>
+      <InputAssemblies Include="$(WorkingDirectory)\BigStorage.dll" />
+      <InputAssemblies Include="$(WorkingDirectory)\PLib.dll" />
+    </ItemGroup>
+    <ILRepack TargetPlatformVersion="v4" OutputType="SameAsPrimaryAssembly" MainAssembly="$(TargetPath)" OutputAssembly="$(TargetPath)" InputAssemblies="@(InputAssemblies)" XmlDocumentation="true" Internalize="true" WilcardInputAssemblies="true" WorkingDirectory="$(GameFolder)\OxygenNotIncluded_Data\Managed" />
+  </Target>
+  <Target Name="CopyArtifactsToInstallFolder" AfterTargets="ILRepack">
+    <PropertyGroup>
+      <InstallFolder>$(WorkingDirectory)\$(ProjectName)</InstallFolder>
+    </PropertyGroup>
+    <ItemGroup>
+      <AnimFiles Include="$(WorkingDirectory)\anim\**\*.*" />
+      <YamlFiles Include="$(ProjectDir)\*.yaml" />
+    </ItemGroup>
+    <Copy SourceFiles="@(AnimFiles)" DestinationFiles="@(AnimFiles->'$(InstallFolder)\anim\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Copy SourceFiles="@(YamlFiles)" DestinationFolder="$(InstallFolder)" />
+    <Copy SourceFiles="preview.png" DestinationFiles="$(InstallFolder)\preview.png" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(InstallFolder)\$(TargetFileName)" />
+  </Target>
 </Project>

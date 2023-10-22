@@ -1,41 +1,50 @@
-﻿using System.Collections.Generic;
+﻿using PeterHan.PLib.Options;
+using System.Collections.Generic;
 using TUNING;
 using UnityEngine;
+
 namespace BigStorage
 {
-    public class BigGasStorage : IBuildingConfig
+    public class BigGasStorageConfig : IBuildingConfig
     {
-        // Token: 0x0400670D RID: 26381
-        public const string ID = "BigGasReservoir";
+        public const string ID = "BigGasStorage";
 
-        // Token: 0x0400670E RID: 26382
-        private const ConduitType CONDUIT_TYPE = ConduitType.Gas;
+        public static LocString NAME = new LocString(
+            "Big Gas Reservoir",
+            "STRINGS.BUILDINGS.PREFABS." + ID.ToUpper() + ".NAME"
+        );
 
-        // Token: 0x0400670F RID: 26383
-        private const int WIDTH = 5;
+        public static LocString DESC = new LocString(
+            "Using more metal gives you more space! Big Gas Storage by RoJCo™",
+            "STRINGS.BUILDINGS.PREFABS." + ID.ToUpper() + ".DESC"
+        );
 
-        // Token: 0x04006710 RID: 26384
-        private const int HEIGHT = 3;
+        public static LocString EFFECT = new LocString(
+            "Many times the space at twenty times the pressure!",
+            "STRINGS.BUILDINGS.PREFABS." + ID.ToUpper() + ".EFFECT"
+        );
 
-        public static LocString NAME = new LocString("Big Gas Storage",
-            "STRINGS.BUILDINGS.PREFABS." + ID.ToUpper() + ".NAME");
-        public static LocString DESC = new LocString("Using more metal gives you more space! Big Gas Storage by RoJCo™",
-            "STRINGS.BUILDINGS.PREFABS." + ID.ToUpper() + ".DESC");
-        public static LocString EFFECT = new LocString("Five times the space at twenty times the pressure!",
-            "STRINGS.BUILDINGS.PREFABS." + ID.ToUpper() + ".EFFECT");
-
-        // Token: 0x04006711 RID: 26385
         public static readonly List<Storage.StoredItemModifier> ReservoirStoredItemModifiers = new List<Storage.StoredItemModifier>
         {
-        Storage.StoredItemModifier.Hide,
-        Storage.StoredItemModifier.Seal
+            Storage.StoredItemModifier.Hide,
+            Storage.StoredItemModifier.Seal
         };
 
-
-        // Token: 0x06005F42 RID: 24386 RVA: 0x001D303C File Offset: 0x001D143C
         public override BuildingDef CreateBuildingDef()
         {
-            BuildingDef buildingDef = BuildingTemplates.CreateBuildingDef(ID, WIDTH, HEIGHT, "gasstorage_kanim", 100, 120f, BUILDINGS.CONSTRUCTION_MASS_KG.TIER5, MATERIALS.REFINED_METALS, 800f, BuildLocationRule.OnFloor, BUILDINGS.DECOR.NONE, NOISE_POLLUTION.NOISY.TIER0, 0.2f);
+            BuildingDef buildingDef = BuildingTemplates.CreateBuildingDef(
+                ID,
+                5, 3,
+                "biggasstorage_kanim",
+                100,
+                180f,
+                BUILDINGS.CONSTRUCTION_MASS_KG.TIER5.Concat(BUILDINGS.CONSTRUCTION_MASS_KG.TIER2), // increased price
+                MATERIALS.ALL_METALS.Concat(MATERIALS.REFINED_METALS),
+                800f,
+                BuildLocationRule.OnFloor,
+                BUILDINGS.DECOR.NONE, // no decor penalty
+                NOISE_POLLUTION.NOISY.TIER0
+            );
             buildingDef.InputConduitType = ConduitType.Gas;
             buildingDef.OutputConduitType = ConduitType.Gas;
             buildingDef.Floodable = false;
@@ -43,24 +52,27 @@ namespace BigStorage
             buildingDef.AudioCategory = "HollowMetal";
             buildingDef.UtilityInputOffset = new CellOffset(1, 2);
             buildingDef.UtilityOutputOffset = new CellOffset(0, 0);
-            buildingDef.LogicOutputPorts = new List<LogicPorts.Port>()
+            buildingDef.LogicOutputPorts = new List<LogicPorts.Port>
             {
-                LogicPorts.Port.OutputPort(SmartReservoir.PORT_ID, new CellOffset(0, 0), (string) STRINGS.BUILDINGS.PREFABS.SMARTRESERVOIR.LOGIC_PORT, (string) STRINGS.BUILDINGS.PREFABS.SMARTRESERVOIR.LOGIC_PORT_ACTIVE, (string) STRINGS.BUILDINGS.PREFABS.SMARTRESERVOIR.LOGIC_PORT_INACTIVE)
+                LogicPorts.Port.OutputPort(
+                    SmartReservoir.PORT_ID,
+                    new CellOffset(0, 0),
+                    STRINGS.BUILDINGS.PREFABS.SMARTRESERVOIR.LOGIC_PORT,
+                    STRINGS.BUILDINGS.PREFABS.SMARTRESERVOIR.LOGIC_PORT_ACTIVE,
+                    STRINGS.BUILDINGS.PREFABS.SMARTRESERVOIR.LOGIC_PORT_INACTIVE)
             };
             GeneratedBuildings.RegisterWithOverlay(OverlayScreen.GasVentIDs, "GasReservoir");
-
             return buildingDef;
         }
 
-        // Token: 0x06005F43 RID: 24387 RVA: 0x001D30C8 File Offset: 0x001D14C8
         public override void ConfigureBuildingTemplate(GameObject go, Tag prefab_tag)
         {
             go.AddOrGet<Reservoir>();
             Storage storage = BuildingTemplates.CreateDefaultStorage(go, false);
             storage.showDescriptor = true;
             storage.storageFilters = STORAGEFILTERS.GASES;
-            storage.capacityKg = BigStorageConfigMod._configManager.Config.BigGasLockerCapacity;
-            storage.SetDefaultStoredItemModifiers(GasReservoirConfig.ReservoirStoredItemModifiers);
+            storage.capacityKg = SingletonOptions<BigStorageConfig>.Instance.BigGasStorageCapacity; // custom capacity
+            storage.SetDefaultStoredItemModifiers(ReservoirStoredItemModifiers);
             storage.showCapacityStatusItem = true;
             storage.showCapacityAsMainStatus = true;
             go.AddOrGet<SmartReservoir>();
@@ -75,14 +87,10 @@ namespace BigStorage
             conduitDispenser.elementFilter = null;
         }
 
-        // Token: 0x06005F44 RID: 24388 RVA: 0x001D3150 File Offset: 0x001D1550
         public override void DoPostConfigureComplete(GameObject go)
         {
             go.AddOrGetDef<StorageController.Def>();
             go.GetComponent<KPrefabID>().AddTag(GameTags.OverlayBehindConduits);
         }
-
-
     }
-
 }

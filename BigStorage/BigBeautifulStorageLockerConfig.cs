@@ -1,42 +1,49 @@
-﻿using TUNING;
+﻿using PeterHan.PLib.Options;
+using TUNING;
 using UnityEngine;
 
 namespace BigStorage
 {
-    public class BigBeautifulStorageLocker : IBuildingConfig
+    public class BigBeautifulStorageLockerConfig : IBuildingConfig
     {
-        // Token: 0x0400670D RID: 26381
-        public const string ID = "BigBeautifulStorage";
+        public const string ID = "BigBeautifulStorageLocker";
 
-        public static LocString NAME = new LocString("Big Beautiful Solid Storage",
-            "STRINGS.BUILDINGS.PREFABS." + ID.ToUpper() + ".NAME");
-        public static LocString DESC = new LocString("Solid storage that goes with any decor! Big Solid Storage by RoJCo™",
-            "STRINGS.BUILDINGS.PREFABS." + ID.ToUpper() + ".DESC");
-        public static LocString EFFECT = new LocString("Is it storage, or is it art?",
-            "STRINGS.BUILDINGS.PREFABS." + ID.ToUpper() + ".EFFECT");
+        public static LocString NAME = new LocString(
+            "Big Beautiful Storage Bin",
+            "STRINGS.BUILDINGS.PREFABS." + ID.ToUpper() + ".NAME"
+        );
 
-        // Token: 0x0600641E RID: 25630 RVA: 0x001EE5A4 File Offset: 0x001EC9A4
+        public static LocString DESC = new LocString(
+            "Solid storage that goes with any decor! Big Solid Storage by RoJCo™",
+            "STRINGS.BUILDINGS.PREFABS." + ID.ToUpper() + ".DESC"
+        );
+
+        public static LocString EFFECT = new LocString(
+            "Is it storage, or is it art?",
+            "STRINGS.BUILDINGS.PREFABS." + ID.ToUpper() + ".EFFECT"
+        );
+
         public override BuildingDef CreateBuildingDef()
         {
-            string id = ID;
-            int width = 1;
-            int height = 2;
-            string anim = "storagelocker_kanim";
-            int hitpoints = 30;
-            float construction_time = 10f;
-            float[] tier = BUILDINGS.CONSTRUCTION_MASS_KG.TIER3;
-            string[] raw_MINERALS = MATERIALS.REFINED_METALS;
-            float melting_point = 1600f;
-            BuildLocationRule build_location_rule = BuildLocationRule.OnFloor;
-            EffectorValues none = NOISE_POLLUTION.NONE;
-            BuildingDef buildingDef = BuildingTemplates.CreateBuildingDef(id, width, height, anim, hitpoints, construction_time, tier, raw_MINERALS, melting_point, build_location_rule, BUILDINGS.DECOR.BONUS.TIER1, none, 0.2f);
-            buildingDef.Floodable = false;
-            buildingDef.AudioCategory = "Metal";
-            buildingDef.Overheatable = false;
-            return buildingDef;
+            BuildingDef obj = BuildingTemplates.CreateBuildingDef(
+                ID,
+                1, 2,
+                "bigbeautifulstoragelocker_kanim",
+                30,
+                20f,  // increased construction time
+                BUILDINGS.CONSTRUCTION_MASS_KG.TIER5.Concat(BUILDINGS.CONSTRUCTION_MASS_KG.TIER2).Concat(BUILDINGS.CONSTRUCTION_MASS_KG.TIER1), // increased price
+                MATERIALS.RAW_MINERALS.Concat(MATERIALS.RAW_METALS).Concat(MATERIALS.REFINED_METALS),
+                1600f,
+                BuildLocationRule.OnFloor,
+                BUILDINGS.DECOR.BONUS.TIER1, // increased decor
+                NOISE_POLLUTION.NONE
+            );
+            obj.Floodable = false;
+            obj.AudioCategory = "Metal";
+            obj.Overheatable = false;
+            return obj;
         }
 
-        // Token: 0x0600641F RID: 25631 RVA: 0x001EE62C File Offset: 0x001ECA2C
         public override void ConfigureBuildingTemplate(GameObject go, Tag prefab_tag)
         {
             SoundEventVolumeCache.instance.AddVolume("storagelocker_kanim", "StorageLocker_Hit_metallic_low", NOISE_POLLUTION.NOISY.TIER1);
@@ -45,24 +52,21 @@ namespace BigStorage
             storage.showInUI = true;
             storage.allowItemRemoval = true;
             storage.showDescriptor = true;
-            storage.capacityKg = BigStorageConfigMod._configManager.Config.BigBeautifulStorageLockerCapacity;
+            storage.capacityKg = SingletonOptions<BigStorageConfig>.Instance.BigBeautifulStorageLockerCapacity; // custom capacity
             storage.storageFilters = STORAGEFILTERS.NOT_EDIBLE_SOLIDS;
             storage.storageFullMargin = STORAGE.STORAGE_LOCKER_FILLED_MARGIN;
             storage.fetchCategory = Storage.FetchCategory.GeneralStorage;
             storage.showCapacityStatusItem = true;
             storage.showCapacityAsMainStatus = true;
-            CopyBuildingSettings copyBuildingSettings = go.AddOrGet<CopyBuildingSettings>();
-            copyBuildingSettings.copyGroupTag = GameTags.StorageLocker;
+            go.AddOrGet<CopyBuildingSettings>().copyGroupTag = GameTags.StorageLocker;
             go.AddOrGet<StorageLocker>();
             go.AddOrGet<UserNameable>();
             go.AddOrGetDef<RocketUsageRestriction.Def>();
         }
 
-        // Token: 0x06006420 RID: 25632 RVA: 0x001EE6AA File Offset: 0x001ECAAA
         public override void DoPostConfigureComplete(GameObject go)
         {
             go.AddOrGetDef<StorageController.Def>();
         }
-
     }
 }
