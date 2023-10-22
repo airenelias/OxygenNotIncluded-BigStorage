@@ -62,6 +62,7 @@
     <Compile Include="BigStoragePatch.cs" />
     <Compile Include="BigStorageConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="STRINGS.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="anim\assets\bigbeautifulstoragelocker\bigbeautifulstoragelocker_anim.bytes">
@@ -140,7 +141,6 @@
   </PropertyGroup>
   <Target Name="ILRepack" AfterTargets="Build">
     <ItemGroup>
-      <InputAssemblies Include="$(WorkingDirectory)\BigStorage.dll" />
       <InputAssemblies Include="$(WorkingDirectory)\PLib.dll" />
     </ItemGroup>
     <ILRepack TargetPlatformVersion="v4" OutputType="SameAsPrimaryAssembly" MainAssembly="$(TargetPath)" OutputAssembly="$(TargetPath)" InputAssemblies="@(InputAssemblies)" XmlDocumentation="true" Internalize="true" WilcardInputAssemblies="true" WorkingDirectory="$(GameFolder)\OxygenNotIncluded_Data\Managed" />
@@ -155,7 +155,7 @@
     <Copy SourceFiles="preview.png" DestinationFiles="$(InstallFolder)\preview.png" />
     <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(InstallFolder)\$(TargetFileName)" />
   </Target>
-  <Target Name = "CompleteCleanup" AfterTargets="Clean">
+  <Target Name="CompleteCleanup" AfterTargets="Clean">
     <RemoveDir Directories="$(WorkingDirectory)\anim" />
     <RemoveDir Directories="$(InstallFolder)" />
   </Target>
