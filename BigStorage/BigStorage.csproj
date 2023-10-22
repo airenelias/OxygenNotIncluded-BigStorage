@@ -136,6 +136,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <WorkingDirectory>$(MSBuildThisFileDirectory)bin\$(Configuration)\$(TargetFramework)</WorkingDirectory>
+    <InstallFolder>$(WorkingDirectory)\$(ProjectName)</InstallFolder>
   </PropertyGroup>
   <Target Name="ILRepack" AfterTargets="Build">
     <ItemGroup>
@@ -145,9 +146,6 @@
     <ILRepack TargetPlatformVersion="v4" OutputType="SameAsPrimaryAssembly" MainAssembly="$(TargetPath)" OutputAssembly="$(TargetPath)" InputAssemblies="@(InputAssemblies)" XmlDocumentation="true" Internalize="true" WilcardInputAssemblies="true" WorkingDirectory="$(GameFolder)\OxygenNotIncluded_Data\Managed" />
   </Target>
   <Target Name="CopyArtifactsToInstallFolder" AfterTargets="ILRepack">
-    <PropertyGroup>
-      <InstallFolder>$(WorkingDirectory)\$(ProjectName)</InstallFolder>
-    </PropertyGroup>
     <ItemGroup>
       <AnimFiles Include="$(WorkingDirectory)\anim\**\*.*" />
       <YamlFiles Include="$(ProjectDir)\*.yaml" />
@@ -156,5 +154,9 @@
     <Copy SourceFiles="@(YamlFiles)" DestinationFolder="$(InstallFolder)" />
     <Copy SourceFiles="preview.png" DestinationFiles="$(InstallFolder)\preview.png" />
     <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(InstallFolder)\$(TargetFileName)" />
+  </Target>
+  <Target Name = "CompleteCleanup" AfterTargets="Clean">
+    <RemoveDir Directories="$(WorkingDirectory)\anim" />
+    <RemoveDir Directories="$(InstallFolder)" />
   </Target>
 </Project>
