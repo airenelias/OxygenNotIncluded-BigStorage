@@ -1,0 +1,145 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGBEAUTIFULSTORAGELOCKER.DESC
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGBEAUTIFULSTORAGELOCKER.DESC"
+msgid "Bin that goes with any interior!\nIs it storage, or is it art?"
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGBEAUTIFULSTORAGELOCKER.EFFECT
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGBEAUTIFULSTORAGELOCKER.EFFECT"
+msgid "Stores a greater amount of the <link=\"ELEMENTSSOLID\">Solid Materials</link> of your choosing.\n\nIncreases <link=\"DECOR\">Decor</link>, contributing to <link=\"MORALE\">Morale</link>."
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGBEAUTIFULSTORAGELOCKER.NAME
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGBEAUTIFULSTORAGELOCKER.NAME"
+msgid "<link=\"BIGBEAUTIFULSTORAGELOCKER\">Big Beautiful Storage Bin</link>"
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGGASSTORAGE.DESC
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGGASSTORAGE.DESC"
+msgid "Ten times the space at twenty times the pressure!"
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGGASSTORAGE.EFFECT
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGGASSTORAGE.EFFECT"
+msgid "Stores a greater amount of the <link=\"ELEMENTSGAS\">Gas</link> resources piped into it."
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGGASSTORAGE.NAME
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGGASSTORAGE.NAME"
+msgid "<link=\"BIGGASSTORAGE\">Big Gas Reservoir</link>"
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGLIQUIDSTORAGE.DESC
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGLIQUIDSTORAGE.DESC"
+msgid "Compacted into buckyballs, maybe. Who knows?"
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGLIQUIDSTORAGE.EFFECT
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGLIQUIDSTORAGE.EFFECT"
+msgid "Stores a greater amount of the <link=\"ELEMENTSLIQUID\">Liquid</link> resources piped into it."
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGLIQUIDSTORAGE.NAME
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGLIQUIDSTORAGE.NAME"
+msgid "<link=\"BIGLIQUIDSTORAGE\">Big Liquid Reservoir</link>"
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.DESC
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.DESC"
+msgid "Even more space for your <link=\"LOGIC\">smart solutions</link>!"
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.EFFECT
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.EFFECT"
+msgid "Stores a greater amount of the <link=\"ELEMENTSSOLID\">Solid Materials</link> of your choosing.\n\nSends a <b><style=\"logic_on\">Green Signal</style></b> when bin is full."
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.LOGIC_PORT
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.LOGIC_PORT"
+msgid "Full/Not Full"
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.LOGIC_PORT_ACTIVE
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.LOGIC_PORT_ACTIVE"
+msgid "Sends a <b><style=\"logic_on\">Green Signal</style></b> when full"
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.LOGIC_PORT_INACTIVE
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.LOGIC_PORT_INACTIVE"
+msgid "Otherwise, sends a <b><style=\"logic_off\">Red Signal</style></b>"
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.NAME
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.NAME"
+msgid "<link=\"BIGSMARTSTORAGELOCKER\">Big Smart Storage Bin</link>"
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGELOCKER.DESC
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGELOCKER.DESC"
+msgid "We removed the unused tea kettle and added a moon roof!"
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGELOCKER.EFFECT
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGELOCKER.EFFECT"
+msgid "Stores a greater amount of the <link=\"ELEMENTSSOLID\">Solid Materials</link> of your choosing."
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGELOCKER.NAME
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGELOCKER.NAME"
+msgid "<link=\"BIGSTORAGELOCKER\">Big Storage Bin</link>"
+msgstr ""
+
+#. BigStorage.STRINGS.CONFIG.CAPACITY.BIGBEAUTIFULSTORAGELOCKER.TITLE
+msgctxt "BigStorage.STRINGS.CONFIG.CAPACITY.BIGBEAUTIFULSTORAGELOCKER.TITLE"
+msgid "Big Beautiful Storage Bin Capacity (kg)"
+msgstr ""
+
+#. BigStorage.STRINGS.CONFIG.CAPACITY.BIGBEAUTIFULSTORAGELOCKER.TOOLTIP
+msgctxt "BigStorage.STRINGS.CONFIG.CAPACITY.BIGBEAUTIFULSTORAGELOCKER.TOOLTIP"
+msgid "Determines the capacity of the Big Beautiful Storage Bin"
+msgstr ""
+
+#. BigStorage.STRINGS.CONFIG.CAPACITY.BIGGASSTORAGE.TITLE
+msgctxt "BigStorage.STRINGS.CONFIG.CAPACITY.BIGGASSTORAGE.TITLE"
+msgid "Big Gas Reservoir Capacity (kg)"
+msgstr ""
+
+#. BigStorage.STRINGS.CONFIG.CAPACITY.BIGGASSTORAGE.TOOLTIP
+msgctxt "BigStorage.STRINGS.CONFIG.CAPACITY.BIGGASSTORAGE.TOOLTIP"
+msgid "Determines the capacity of the Big Gas Reservoir"
+msgstr ""
+
+#. BigStorage.STRINGS.CONFIG.CAPACITY.BIGLIQUIDSTORAGE.TITLE
+msgctxt "BigStorage.STRINGS.CONFIG.CAPACITY.BIGLIQUIDSTORAGE.TITLE"
+msgid "Big Liquid Reservoir Capacity (kg)"
+msgstr ""
+
+#. BigStorage.STRINGS.CONFIG.CAPACITY.BIGLIQUIDSTORAGE.TOOLTIP
+msgctxt "BigStorage.STRINGS.CONFIG.CAPACITY.BIGLIQUIDSTORAGE.TOOLTIP"
+msgid "Determines the capacity of the Big Liquid Reservoir"
+msgstr ""
+
+#. BigStorage.STRINGS.CONFIG.CAPACITY.BIGSMARTSTORAGELOCKER.TITLE
+msgctxt "BigStorage.STRINGS.CONFIG.CAPACITY.BIGSMARTSTORAGELOCKER.TITLE"
+msgid "Big Smart Storage Bin Capacity (kg)"
+msgstr ""
+
+#. BigStorage.STRINGS.CONFIG.CAPACITY.BIGSMARTSTORAGELOCKER.TOOLTIP
+msgctxt "BigStorage.STRINGS.CONFIG.CAPACITY.BIGSMARTSTORAGELOCKER.TOOLTIP"
+msgid "Determines the capacity of the Big Smart Storage Bin"
+msgstr ""
+
+#. BigStorage.STRINGS.CONFIG.CAPACITY.BIGSTORAGELOCKER.TITLE
+msgctxt "BigStorage.STRINGS.CONFIG.CAPACITY.BIGSTORAGELOCKER.TITLE"
+msgid "Big Storage Bin Capacity (kg)"
+msgstr ""
+
+#. BigStorage.STRINGS.CONFIG.CAPACITY.BIGSTORAGELOCKER.TOOLTIP
+msgctxt "BigStorage.STRINGS.CONFIG.CAPACITY.BIGSTORAGELOCKER.TOOLTIP"
+msgid "Determines the capacity of the Big Storage Bin"
+msgstr ""
+

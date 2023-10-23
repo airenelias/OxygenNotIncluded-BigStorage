@@ -95,6 +95,7 @@
     <None Include="anim\assets\bigstoragelocker\bigstoragelocker_build.bytes">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="bigstorage_template.pot" />
     <None Include="mod.yaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
