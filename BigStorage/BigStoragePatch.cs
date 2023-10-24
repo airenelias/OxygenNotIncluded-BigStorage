@@ -53,13 +53,13 @@ namespace BigStorage
                 {
                     // Basic intended way to register strings, keeps namespace
                     Localization.RegisterForTranslation(root);
+                    // Creates template for users to edit
+                    Localization.GenerateStringsTemplate(root, Path.Combine(Manager.GetDirectory(), "strings_templates"));
                     // Load user created translation files
                     LoadStrings();
                     // Register strings without namespace
                     // because we already loaded user transltions, custom languages will overwrite these
                     LocString.CreateLocStringKeys(root, null);
-                    // Creates template for users to edit
-                    Localization.GenerateStringsTemplate(root, Path.Combine(Manager.GetDirectory(), "strings_templates"));
                 }
 
                 private static void LoadStrings()

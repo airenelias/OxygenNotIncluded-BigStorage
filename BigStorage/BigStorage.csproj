@@ -135,6 +135,9 @@
       <Version>4.13.0</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="translations\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <WorkingDirectory>$(MSBuildThisFileDirectory)bin\$(Configuration)\$(TargetFramework)</WorkingDirectory>
@@ -148,16 +151,19 @@
   </Target>
   <Target Name="CopyArtifactsToInstallFolder" AfterTargets="ILRepack">
     <ItemGroup>
-      <AnimFiles Include="$(WorkingDirectory)\anim\**\*.*" />
+      <AnimationFiles Include="$(WorkingDirectory)\anim\**\*.*" />
+      <LocalizationFiles Include="$(WorkingDirectory)\translations\*.po" />
       <YamlFiles Include="$(ProjectDir)\*.yaml" />
     </ItemGroup>
-    <Copy SourceFiles="@(AnimFiles)" DestinationFiles="@(AnimFiles->'$(InstallFolder)\anim\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Copy SourceFiles="@(AnimationFiles)" DestinationFiles="@(AnimationFiles->'$(InstallFolder)\anim\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Copy SourceFiles="@(LocalizationFiles)" DestinationFiles="@(LocalizationFiles->'$(InstallFolder)\translations\%(Filename).po')" />
     <Copy SourceFiles="@(YamlFiles)" DestinationFolder="$(InstallFolder)" />
-    <Copy SourceFiles="preview.png" DestinationFiles="$(InstallFolder)\preview.png" />
     <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(InstallFolder)\$(TargetFileName)" />
+    <Copy SourceFiles="preview.png" DestinationFiles="$(InstallFolder)\preview.png" />
   </Target>
   <Target Name="CompleteCleanup" AfterTargets="Clean">
     <RemoveDir Directories="$(WorkingDirectory)\anim" />
+    <RemoveDir Directories="$(WorkingDirectory)\translations" />
     <RemoveDir Directories="$(InstallFolder)" />
   </Target>
 </Project>
