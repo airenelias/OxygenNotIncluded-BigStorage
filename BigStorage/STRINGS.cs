@@ -18,14 +18,14 @@ namespace BigStorage
                 public static class BIGBEAUTIFULSTORAGELOCKER
                 {
                     public static LocString NAME = FormatAsLink("Big Beautiful Storage Bin", "BIGBEAUTIFULSTORAGELOCKER");
-                    public static LocString DESC = "Bin that goes with any interior!\nIs it storage, or is it art?";
+                    public static LocString DESC = "Is it storage, or is it art?";
                     public static LocString EFFECT = "Stores a greater amount of the " + FormatAsLink("Solid Materials", "ELEMENTS_SOLID") + " of your choosing.\n\nIncreases " + FormatAsLink("Decor", "DECOR") + ", contributing to " + FormatAsLink("Morale", "MORALE") + ".";
                 }
 
                 public static class BIGSMARTSTORAGELOCKER
                 {
                     public static LocString NAME = FormatAsLink("Big Smart Storage Bin", "BIGSMARTSTORAGELOCKER");
-                    public static LocString DESC = "Even more space for your " + FormatAsLink("smart solutions", "LOGIC") + "!";
+                    public static LocString DESC = "Even more space for your smart solutions!";
                     public static LocString EFFECT = "Stores a greater amount of the " + FormatAsLink("Solid Materials", "ELEMENTS_SOLID") + " of your choosing.\n\nSends a " + FormatAsAutomationState("Green Signal", AutomationState.Active) + " when bin is full.";
                     public static LocString LOGIC_PORT = "Full/Not Full";
                     public static LocString LOGIC_PORT_ACTIVE = "Sends a " + FormatAsAutomationState("Green Signal", AutomationState.Active) + " when full";

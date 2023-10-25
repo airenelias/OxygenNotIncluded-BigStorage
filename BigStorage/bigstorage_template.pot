@@ -5,7 +5,7 @@ msgstr ""
 
 #. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGBEAUTIFULSTORAGELOCKER.DESC
 msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGBEAUTIFULSTORAGELOCKER.DESC"
-msgid "Bin that goes with any interior!\nIs it storage, or is it art?"
+msgid "Is it storage, or is it art?"
 msgstr ""
 
 #. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGBEAUTIFULSTORAGELOCKER.EFFECT
@@ -50,7 +50,7 @@ msgstr ""
 
 #. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.DESC
 msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.DESC"
-msgid "Even more space for your <link=\"LOGIC\">smart solutions</link>!"
+msgid "Even more space for your smart solutions!"
 msgstr ""
 
 #. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.EFFECT
