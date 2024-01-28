@@ -45,6 +45,12 @@ namespace BigStorage
                     public static LocString DESC = "Ten times the space at twenty times the pressure!";
                     public static LocString EFFECT = "Stores a greater amount of the " + FormatAsLink("Gas", "ELEMENTS_GAS") + " resources piped into it.";
                 }
+                public static class BIGSTORAGETILE
+                {
+                    public static LocString NAME = FormatAsLink("Big Storage Tile", "BIGSTORAGETILE");
+                    public static LocString DESC = "Will it store more if you keep jumping on it?";
+                    public static LocString EFFECT = "Used to build the walls and floors of rooms.\n\nProvides a greater amount of built-in storage for small spaces.";
+                }
             }
         }
 
@@ -80,6 +86,11 @@ namespace BigStorage
                 {
                     public static LocString TITLE = "Big Gas Reservoir Capacity (kg)";
                     public static LocString TOOLTIP = "Determines the capacity of the Big Gas Reservoir";
+                }
+                public static class BIGSTORAGETILE
+                {
+                    public static LocString TITLE = "Big Storage Tile Capacity (kg)";
+                    public static LocString TOOLTIP = "Determines the capacity of the Big Storage Tile";
                 }
             }
         }

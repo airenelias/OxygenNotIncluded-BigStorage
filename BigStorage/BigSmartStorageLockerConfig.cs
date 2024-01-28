@@ -15,7 +15,7 @@ internal class BigSmartStorageLockerConfig : IBuildingConfig
             1, 2,
             "bigsmartstoragelocker_kanim",
             30,
-            180f, // increased construction time
+            90f, // increased construction time
             TUNING.BUILDINGS.CONSTRUCTION_MASS_KG.TIER4, // increased price
             MATERIALS.REFINED_METALS,
             1600f,

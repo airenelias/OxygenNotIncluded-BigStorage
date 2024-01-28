@@ -15,7 +15,7 @@ public class BigLiquidStorageConfig : IBuildingConfig
             2, 3,
             "bigliquidstorage_kanim",
             100,
-            180f,
+            180f,  // increased construction time
             TUNING.BUILDINGS.CONSTRUCTION_MASS_KG.TIER5.Concat(TUNING.BUILDINGS.CONSTRUCTION_MASS_KG.TIER2), // increased price
             MATERIALS.ALL_METALS.Concat(MATERIALS.REFINED_METALS),
             800f,

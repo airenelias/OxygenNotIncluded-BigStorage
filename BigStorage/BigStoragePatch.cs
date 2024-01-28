@@ -29,6 +29,7 @@ namespace BigStorage
                 ModUtil.AddBuildingToPlanScreen("Base", BigSmartStorageLockerConfig.ID);
                 ModUtil.AddBuildingToPlanScreen("Base", BigLiquidStorageConfig.ID);
                 ModUtil.AddBuildingToPlanScreen("Base", BigGasStorageConfig.ID);
+                ModUtil.AddBuildingToPlanScreen("Base", BigStorageTileConfig.ID);
             }
 
             [HarmonyPatch(typeof(Db), "Initialize")]
@@ -41,6 +42,7 @@ namespace BigStorage
                     Db.Get().Techs.Get("SolidTransport").unlockedItemIDs.Add(BigSmartStorageLockerConfig.ID);
                     Db.Get().Techs.Get("LiquidTemperature").unlockedItemIDs.Add(BigLiquidStorageConfig.ID);
                     Db.Get().Techs.Get("Catalytics").unlockedItemIDs.Add(BigGasStorageConfig.ID);
+                    Db.Get().Techs.Get("SolidManagement").unlockedItemIDs.Add(BigStorageTileConfig.ID);
                 }
             }
 

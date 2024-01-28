@@ -93,6 +93,21 @@ msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGELOCKER.NAME"
 msgid "<link=\"BIGSTORAGELOCKER\">Big Storage Bin</link>"
 msgstr ""
 
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGETILE.DESC
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGETILE.DESC"
+msgid "Will it store more if you keep jumping on it?"
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGETILE.EFFECT
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGETILE.EFFECT"
+msgid "Used to build the walls and floors of rooms.\n\nProvides a greater amount of built-in storage for small spaces."
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGETILE.NAME
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGETILE.NAME"
+msgid "<link=\"BIGSTORAGETILE\">Big Storage Tile</link>"
+msgstr ""
+
 #. BigStorage.STRINGS.UI.CAPACITY.BIGBEAUTIFULSTORAGELOCKER.TITLE
 msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGBEAUTIFULSTORAGELOCKER.TITLE"
 msgid "Big Beautiful Storage Bin Capacity (kg)"
@@ -141,5 +156,15 @@ msgstr ""
 #. BigStorage.STRINGS.UI.CAPACITY.BIGSTORAGELOCKER.TOOLTIP
 msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGSTORAGELOCKER.TOOLTIP"
 msgid "Determines the capacity of the Big Storage Bin"
+msgstr ""
+
+#. BigStorage.STRINGS.UI.CAPACITY.BIGSTORAGETILE.TITLE
+msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGSTORAGETILE.TITLE"
+msgid "Big Storage Tile Capacity (kg)"
+msgstr ""
+
+#. BigStorage.STRINGS.UI.CAPACITY.BIGSTORAGETILE.TOOLTIP
+msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGSTORAGETILE.TOOLTIP"
+msgid "Determines the capacity of the Big Storage Tile"
 msgstr ""
 

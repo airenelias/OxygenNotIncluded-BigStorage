@@ -35,7 +35,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <GameFolder>C:\Program Files (x86)\Steam\steamapps\common\OxygenNotIncluded</GameFolder>
+    <GameFolder>D:\Steam\steamapps\common\OxygenNotIncluded</GameFolder>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony" HintPath="$(GameFolder)\OxygenNotIncluded_Data\Managed\0Harmony.dll" />
@@ -56,7 +56,8 @@
   <ItemGroup>
     <Compile Include="BigBeautifulStorageLockerConfig.cs" />
     <Compile Include="BigSmartStorageLockerConfig.cs" />
-    <Compile Include="BigStorageLockerConfig .cs" />
+    <Compile Include="BigStorageTileConfig.cs" />
+    <Compile Include="BigStorageLockerConfig.cs" />
     <Compile Include="BigLiquidStorageConfig.cs" />
     <Compile Include="BigGasStorageConfig.cs" />
     <Compile Include="BigStoragePatch.cs" />
@@ -95,6 +96,12 @@
     <None Include="anim\assets\bigstoragelocker\bigstoragelocker_build.bytes">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="anim\assets\bigstoragetile\bigstoragetile_anim.bytes">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="anim\assets\bigstoragetile\bigstoragetile_build.bytes">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="bigstorage_template.pot" />
     <None Include="mod.yaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -117,6 +124,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="anim\assets\bigstoragelocker\bigstoragelocker_0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="anim\assets\bigstoragetile\bigstoragetile_0.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="preview.png" />

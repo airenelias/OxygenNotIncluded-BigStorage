@@ -38,5 +38,11 @@ namespace BigStorage
             "STRINGS.UI.CAPACITY.BIGGASSTORAGE.TOOLTIP", Format = "F0")]
         [Limit(100, 10000)]
         public int BigGasStorageCapacity { get; set; } = 600;
+
+        [JsonProperty]
+        [Option("STRINGS.UI.CAPACITY.BIGSTORAGETILE.TITLE",
+            "STRINGS.UI.CAPACITY.BIGSTORAGETILE.TOOLTIP", Format = "F0")]
+        [Limit(100, 1000000)]
+        public int BigStorageTileCapacity { get; set; } = 4000;
     }
 }
