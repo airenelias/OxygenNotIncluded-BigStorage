@@ -45,11 +45,19 @@ namespace BigStorage
                     public static LocString DESC = "Ten times the space at twenty times the pressure!";
                     public static LocString EFFECT = "Stores a greater amount of the " + FormatAsLink("Gas", "ELEMENTS_GAS") + " resources piped into it.";
                 }
+
                 public static class BIGSTORAGETILE
                 {
                     public static LocString NAME = FormatAsLink("Big Storage Tile", "BIGSTORAGETILE");
                     public static LocString DESC = "Will it store more if you keep jumping on it?";
                     public static LocString EFFECT = "Used to build the walls and floors of rooms.\n\nProvides a greater amount of built-in storage for small spaces.";
+                }
+
+                public static class BIGREFRIGERATOR
+                {
+                    public static LocString NAME = FormatAsLink("Big Refrigerator", "BIGREFRIGERATOR");
+                    public static LocString DESC = "With this much space, four duplicants can now fit in there!\nHowever, leaving duplicants inside for an extended amount of time is not advised.";
+                    public static LocString EFFECT = "Stores a greater amount of " + FormatAsLink("Food", "FOOD") + " at an ideal " + FormatAsLink("Temperature", "HEAT") + " to prevent spoilage.";
                 }
             }
         }
@@ -79,18 +87,34 @@ namespace BigStorage
                 public static class BIGLIQUIDSTORAGE
                 {
                     public static LocString TITLE = "Big Liquid Reservoir Capacity (kg)";
-                    public static LocString TOOLTIP = "Determines the capacity of the Big Liquid Reservoir";
+                    public static LocString TOOLTIP = "Determines the capacity of the Big Liquid Reservoir\nCAUTION: Reducing reservoir capacity during playthrough may result in the loss of all stored resources; ensure that you have stored your excesses before lowering this value";
                 }
 
                 public static class BIGGASSTORAGE
                 {
                     public static LocString TITLE = "Big Gas Reservoir Capacity (kg)";
-                    public static LocString TOOLTIP = "Determines the capacity of the Big Gas Reservoir";
+                    public static LocString TOOLTIP = "Determines the capacity of the Big Gas Reservoir\nCAUTION: Reducing reservoir capacity during playthrough may result in the loss of all stored resources; ensure that you have stored your excesses before lowering this value";
                 }
+
                 public static class BIGSTORAGETILE
                 {
                     public static LocString TITLE = "Big Storage Tile Capacity (kg)";
                     public static LocString TOOLTIP = "Determines the capacity of the Big Storage Tile";
+                }
+
+                public static class BIGREFRIGERATOR
+                {
+                    public static LocString TITLE = "Big Refrigerator Capacity (kg)";
+                    public static LocString TOOLTIP = "Determines the capacity of the Big Refrigerator";
+                }
+            }
+
+            public static class ENABLED
+            {
+                public static class BIGREFRIGERATOR
+                {
+                    public static LocString TITLE = "Enable Big Refrigerator";
+                    public static LocString TOOLTIP = "Allows research and construction of the Big Refrigerator";
                 }
             }
         }

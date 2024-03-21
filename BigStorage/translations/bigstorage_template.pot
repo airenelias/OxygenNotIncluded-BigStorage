@@ -48,6 +48,21 @@ msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGLIQUIDSTORAGE.NAME"
 msgid "<link=\"BIGLIQUIDSTORAGE\">Big Liquid Reservoir</link>"
 msgstr ""
 
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGREFRIGERATOR.DESC
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGREFRIGERATOR.DESC"
+msgid "With this much space, four duplicants can now fit in there!\nHowever, leaving duplicants inside for an extended amount of time is not advised."
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGREFRIGERATOR.EFFECT
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGREFRIGERATOR.EFFECT"
+msgid "Stores a greater amount of <link=\"FOOD\">Food</link> at an ideal <link=\"HEAT\">Temperature</link> to prevent spoilage."
+msgstr ""
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGREFRIGERATOR.NAME
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGREFRIGERATOR.NAME"
+msgid "<link=\"BIGREFRIGERATOR\">Big Refrigerator</link>"
+msgstr ""
+
 #. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.DESC
 msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.DESC"
 msgid "Even more space for your smart solutions!"
@@ -125,7 +140,7 @@ msgstr ""
 
 #. BigStorage.STRINGS.UI.CAPACITY.BIGGASSTORAGE.TOOLTIP
 msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGGASSTORAGE.TOOLTIP"
-msgid "Determines the capacity of the Big Gas Reservoir"
+msgid "Determines the capacity of the Big Gas Reservoir\nCAUTION: Reducing reservoir capacity during playthrough may result in the loss of all stored resources; ensure that you have stored your excesses before lowering this value"
 msgstr ""
 
 #. BigStorage.STRINGS.UI.CAPACITY.BIGLIQUIDSTORAGE.TITLE
@@ -135,7 +150,17 @@ msgstr ""
 
 #. BigStorage.STRINGS.UI.CAPACITY.BIGLIQUIDSTORAGE.TOOLTIP
 msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGLIQUIDSTORAGE.TOOLTIP"
-msgid "Determines the capacity of the Big Liquid Reservoir"
+msgid "Determines the capacity of the Big Liquid Reservoir\nCAUTION: Reducing reservoir capacity during playthrough may result in the loss of all stored resources; ensure that you have stored your excesses before lowering this value"
+msgstr ""
+
+#. BigStorage.STRINGS.UI.CAPACITY.BIGREFRIGERATOR.TITLE
+msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGREFRIGERATOR.TITLE"
+msgid "Big Refrigerator Capacity (kg)"
+msgstr ""
+
+#. BigStorage.STRINGS.UI.CAPACITY.BIGREFRIGERATOR.TOOLTIP
+msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGREFRIGERATOR.TOOLTIP"
+msgid "Determines the capacity of the Big Refrigerator"
 msgstr ""
 
 #. BigStorage.STRINGS.UI.CAPACITY.BIGSMARTSTORAGELOCKER.TITLE
@@ -166,5 +191,15 @@ msgstr ""
 #. BigStorage.STRINGS.UI.CAPACITY.BIGSTORAGETILE.TOOLTIP
 msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGSTORAGETILE.TOOLTIP"
 msgid "Determines the capacity of the Big Storage Tile"
+msgstr ""
+
+#. BigStorage.STRINGS.UI.ENABLED.BIGREFRIGERATOR.TITLE
+msgctxt "BigStorage.STRINGS.UI.ENABLED.BIGREFRIGERATOR.TITLE"
+msgid "Enable Big Refrigerator"
+msgstr ""
+
+#. BigStorage.STRINGS.UI.ENABLED.BIGREFRIGERATOR.TOOLTIP
+msgctxt "BigStorage.STRINGS.UI.ENABLED.BIGREFRIGERATOR.TOOLTIP"
+msgid "Allows research and construction of the Big Refrigerator"
 msgstr ""
 

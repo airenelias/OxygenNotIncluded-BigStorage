@@ -3,6 +3,7 @@ using KMod;
 using PeterHan.PLib.AVC;
 using PeterHan.PLib.Core;
 using PeterHan.PLib.Options;
+using STRINGS;
 using System;
 using System.IO;
 using System.Reflection;
@@ -17,6 +18,13 @@ namespace BigStorage
             PUtil.InitLibrary();
             new PVersionCheck().Register(this, new SteamVersionChecker());
             new POptions().RegisterOptions(this, typeof(BigStorageConfig));
+
+            // Increasing maximum allowed mass for non-stackable entities (water/gas)
+            float maxMass = Math.Max(
+                SingletonOptions<BigStorageConfig>.Instance.BigLiquidStorageCapacity,
+                SingletonOptions<BigStorageConfig>.Instance.BigGasStorageCapacity);
+            if (maxMass > PrimaryElement.MAX_MASS)
+                PrimaryElement.MAX_MASS = maxMass;
         }
 
         [HarmonyPatch(typeof(GeneratedBuildings), "LoadGeneratedBuildings")]
@@ -30,6 +38,8 @@ namespace BigStorage
                 ModUtil.AddBuildingToPlanScreen("Base", BigLiquidStorageConfig.ID);
                 ModUtil.AddBuildingToPlanScreen("Base", BigGasStorageConfig.ID);
                 ModUtil.AddBuildingToPlanScreen("Base", BigStorageTileConfig.ID);
+                if (SingletonOptions<BigStorageConfig>.Instance.BigRefrigeratorEnabled)
+                    ModUtil.AddBuildingToPlanScreen("Food", BigRefrigeratorConfig.ID);
             }
 
             [HarmonyPatch(typeof(Db), "Initialize")]
@@ -43,6 +53,8 @@ namespace BigStorage
                     Db.Get().Techs.Get("LiquidTemperature").unlockedItemIDs.Add(BigLiquidStorageConfig.ID);
                     Db.Get().Techs.Get("Catalytics").unlockedItemIDs.Add(BigGasStorageConfig.ID);
                     Db.Get().Techs.Get("SolidManagement").unlockedItemIDs.Add(BigStorageTileConfig.ID);
+                    if (SingletonOptions<BigStorageConfig>.Instance.BigRefrigeratorEnabled)
+                        Db.Get().Techs.Get("FoodRepurposing").unlockedItemIDs.Add(BigRefrigeratorConfig.ID);
                 }
             }
 
