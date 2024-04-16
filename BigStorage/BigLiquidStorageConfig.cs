@@ -38,7 +38,7 @@ public class BigLiquidStorageConfig : IBuildingConfig
                 STRINGS.BUILDINGS.PREFABS.SMARTRESERVOIR.LOGIC_PORT_ACTIVE,
                 STRINGS.BUILDINGS.PREFABS.SMARTRESERVOIR.LOGIC_PORT_INACTIVE)
         };
-        GeneratedBuildings.RegisterWithOverlay(OverlayScreen.LiquidVentIDs, "LiquidReservoir");
+        GeneratedBuildings.RegisterWithOverlay(OverlayScreen.LiquidVentIDs, ID);
         return buildingDef;
     }
 

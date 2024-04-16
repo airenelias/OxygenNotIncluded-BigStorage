@@ -44,7 +44,7 @@ public class BigGasStorageConfig : IBuildingConfig
                 STRINGS.BUILDINGS.PREFABS.SMARTRESERVOIR.LOGIC_PORT_ACTIVE,
                 STRINGS.BUILDINGS.PREFABS.SMARTRESERVOIR.LOGIC_PORT_INACTIVE)
         };
-        GeneratedBuildings.RegisterWithOverlay(OverlayScreen.GasVentIDs, "GasReservoir");
+        GeneratedBuildings.RegisterWithOverlay(OverlayScreen.GasVentIDs, ID);
         return buildingDef;
     }
 
