@@ -4,7 +4,7 @@ using System;
 
 namespace BigStorage
 {
-    [ConfigFile]
+    [ConfigFile(IndentOutput: true, SharedConfigLocation: true)]
     [RestartRequired]
     public class BigStorageConfig : SingletonOptions<BigStorageConfig>
     {
