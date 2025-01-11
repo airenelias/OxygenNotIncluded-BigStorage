@@ -1,0 +1,266 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ventulus\n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Application: Oxygen Not IncludedPOT Version: 2.0\n"
+"X-Generator: Poedit 3.5\n"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGBEAUTIFULSTORAGELOCKER.DESC
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGBEAUTIFULSTORAGELOCKER.DESC"
+msgid "Is it storage, or is it art?"
+msgstr "这是存储箱，还是艺术品？"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGBEAUTIFULSTORAGELOCKER.EFFECT
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGBEAUTIFULSTORAGELOCKER.EFFECT"
+msgid ""
+"Stores a greater amount of the <link=\"ELEMENTSSOLID\">Solid Materials</"
+"link> of your choosing.\n"
+"\n"
+"Increases <link=\"DECOR\">Decor</link>, contributing to "
+"<link=\"MORALE\">Morale</link>."
+msgstr ""
+"储存你选择的更多数量的<link=\"ELEMENTSSOLID\">固体材料</link>。\n"
+"\n"
+"增加<link=\"DECOR\">装饰度</link>，有利于<link=\"MORALE\">士气</link>."
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGBEAUTIFULSTORAGELOCKER.NAME
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGBEAUTIFULSTORAGELOCKER.NAME"
+msgid "<link=\"BIGBEAUTIFULSTORAGELOCKER\">Big Beautiful Storage Bin</link>"
+msgstr "<link=\"BIGBEAUTIFULSTORAGELOCKER\">大型美丽存储箱</link>"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGGASSTORAGE.DESC
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGGASSTORAGE.DESC"
+msgid "Ten times the space at twenty times the pressure!"
+msgstr "十倍空间，二十倍压力！"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGGASSTORAGE.EFFECT
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGGASSTORAGE.EFFECT"
+msgid ""
+"Stores a greater amount of the <link=\"ELEMENTSGAS\">Gas</link> resources "
+"piped into it."
+msgstr "储存管道输入的更多数量的<link=\"ELEMENTSGAS\">气体</link>。"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGGASSTORAGE.NAME
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGGASSTORAGE.NAME"
+msgid "<link=\"BIGGASSTORAGE\">Big Gas Reservoir</link>"
+msgstr "<link=\"BIGGASSTORAGE\">大型储气库</link>"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGLIQUIDSTORAGE.DESC
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGLIQUIDSTORAGE.DESC"
+msgid "Compacted into buckyballs, maybe. Who knows?"
+msgstr "也许被压成水桶球。谁知道呢？"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGLIQUIDSTORAGE.EFFECT
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGLIQUIDSTORAGE.EFFECT"
+msgid ""
+"Stores a greater amount of the <link=\"ELEMENTSLIQUID\">Liquid</link> "
+"resources piped into it."
+msgstr "储存管道输入的更多数量的<link=\"ELEMENTSLIQUID\">液体</link>。"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGLIQUIDSTORAGE.NAME
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGLIQUIDSTORAGE.NAME"
+msgid "<link=\"BIGLIQUIDSTORAGE\">Big Liquid Reservoir</link>"
+msgstr "<link=\"BIGLIQUIDSTORAGE\">大型储液库</link>"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGREFRIGERATOR.DESC
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGREFRIGERATOR.DESC"
+msgid ""
+"With this much space, four duplicants can now fit in there!\n"
+"However, leaving duplicants inside for an extended amount of time is not "
+"advised."
+msgstr ""
+"有了这么大的空间，现在可以放进四个复制人！\n"
+"不过，不建议复制人长时间停留在里面。"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGREFRIGERATOR.EFFECT
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGREFRIGERATOR.EFFECT"
+msgid ""
+"Stores a greater amount of <link=\"FOOD\">Food</link> at an ideal "
+"<link=\"HEAT\">Temperature</link> to prevent spoilage."
+msgstr ""
+"在理想<link=\"HEAT\">温度</link>想储存更多数量的<link=\"FOOD\">食物</link>以"
+"防止腐坏。"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGREFRIGERATOR.NAME
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGREFRIGERATOR.NAME"
+msgid "<link=\"BIGREFRIGERATOR\">Big Refrigerator</link>"
+msgstr "<link=\"BIGREFRIGERATOR\">大型冰箱</link>"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.DESC
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.DESC"
+msgid "Even more space for your smart solutions!"
+msgstr "为您的智能解决方案提供更多空间！"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.EFFECT
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.EFFECT"
+msgid ""
+"Stores a greater amount of the <link=\"ELEMENTSSOLID\">Solid Materials</"
+"link> of your choosing.\n"
+"\n"
+"Sends a <b><style=\"logic_on\">Green Signal</style></b> when bin is full."
+msgstr ""
+"储存你选择的更多数量的<link=\"ELEMENTSSOLID\">固体材料</link>。\n"
+"\n"
+"当存储箱满时送出一个<b><style=\"logic_on\">绿色信号</style></b>。"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.LOGIC_PORT
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.LOGIC_PORT"
+msgid "Full/Not Full"
+msgstr "满/非满"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.LOGIC_PORT_ACTIVE
+msgctxt ""
+"BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.LOGIC_PORT_ACTIVE"
+msgid "Sends a <b><style=\"logic_on\">Green Signal</style></b> when full"
+msgstr "装满时送出一个<b><style=\"logic_on\">绿色信号</style></b>"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.LOGIC_PORT_INACTIVE
+msgctxt ""
+"BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER."
+"LOGIC_PORT_INACTIVE"
+msgid "Otherwise, sends a <b><style=\"logic_off\">Red Signal</style></b>"
+msgstr "否则，送出一个<b><style=\"logic_off\">红色信号</style></b>"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.NAME
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSMARTSTORAGELOCKER.NAME"
+msgid "<link=\"BIGSMARTSTORAGELOCKER\">Big Smart Storage Bin</link>"
+msgstr "<link=\"BIGSMARTSTORAGELOCKER\">大型智能存储箱</link>"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGELOCKER.DESC
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGELOCKER.DESC"
+msgid "We removed the unused tea kettle and added a moon roof!"
+msgstr "我们去掉了无用的壶盖，并增加了一个天窗！"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGELOCKER.EFFECT
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGELOCKER.EFFECT"
+msgid ""
+"Stores a greater amount of the <link=\"ELEMENTSSOLID\">Solid Materials</"
+"link> of your choosing."
+msgstr "储存你选择的更多数量的<link=\"ELEMENTSSOLID\">固体材料</link>。"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGELOCKER.NAME
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGELOCKER.NAME"
+msgid "<link=\"BIGSTORAGELOCKER\">Big Storage Bin</link>"
+msgstr "<link=\"BIGSTORAGELOCKER\">大型存储箱</link>"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGETILE.DESC
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGETILE.DESC"
+msgid "Will it store more if you keep jumping on it?"
+msgstr "如果你一直在上面跳来跳去，它会储存更多东西吗？"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGETILE.EFFECT
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGETILE.EFFECT"
+msgid ""
+"Used to build the walls and floors of rooms.\n"
+"\n"
+"Provides a greater amount of built-in storage for small spaces."
+msgstr ""
+"用于建造房间的墙壁和地板。\n"
+"\n"
+"为狭小的空间提供更多的内置存储空间。"
+
+#. BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGETILE.NAME
+msgctxt "BigStorage.STRINGS.BUILDINGS.PREFABS.BIGSTORAGETILE.NAME"
+msgid "<link=\"BIGSTORAGETILE\">Big Storage Tile</link>"
+msgstr "<link=\"BIGSTORAGETILE\">大型存储砖</link>"
+
+#. BigStorage.STRINGS.UI.CAPACITY.BIGBEAUTIFULSTORAGELOCKER.TITLE
+msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGBEAUTIFULSTORAGELOCKER.TITLE"
+msgid "Big Beautiful Storage Bin Capacity (kg)"
+msgstr "大型美丽存储箱容量(kg)"
+
+#. BigStorage.STRINGS.UI.CAPACITY.BIGBEAUTIFULSTORAGELOCKER.TOOLTIP
+msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGBEAUTIFULSTORAGELOCKER.TOOLTIP"
+msgid "Determines the capacity of the Big Beautiful Storage Bin"
+msgstr "决定大型美丽存储箱的容量"
+
+#. BigStorage.STRINGS.UI.CAPACITY.BIGGASSTORAGE.TITLE
+msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGGASSTORAGE.TITLE"
+msgid "Big Gas Reservoir Capacity (kg)"
+msgstr "大型储气库容量(kg)"
+
+#. BigStorage.STRINGS.UI.CAPACITY.BIGGASSTORAGE.TOOLTIP
+msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGGASSTORAGE.TOOLTIP"
+msgid ""
+"Determines the capacity of the Big Gas Reservoir\n"
+"CAUTION: Reducing reservoir capacity during playthrough may result in the "
+"loss of all stored resources; ensure that you have stored your excesses "
+"before lowering this value"
+msgstr ""
+"决定大型储气库的容量\n"
+"注意：在游戏过程中降低容器容量可能会导致丢失所有储存的资源；在降低此值之前，"
+"请确保您已经另外储存了多余的资源"
+
+#. BigStorage.STRINGS.UI.CAPACITY.BIGLIQUIDSTORAGE.TITLE
+msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGLIQUIDSTORAGE.TITLE"
+msgid "Big Liquid Reservoir Capacity (kg)"
+msgstr "大型储液库容量(kg)"
+
+#. BigStorage.STRINGS.UI.CAPACITY.BIGLIQUIDSTORAGE.TOOLTIP
+msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGLIQUIDSTORAGE.TOOLTIP"
+msgid ""
+"Determines the capacity of the Big Liquid Reservoir\n"
+"CAUTION: Reducing reservoir capacity during playthrough may result in the "
+"loss of all stored resources; ensure that you have stored your excesses "
+"before lowering this value"
+msgstr ""
+"决定大型储液库的容量\n"
+"注意：在游戏过程中降低容器容量可能会导致丢失所有储存的资源；在降低此值之前，"
+"请确保您已经另外储存了多余的资源"
+
+#. BigStorage.STRINGS.UI.CAPACITY.BIGREFRIGERATOR.TITLE
+msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGREFRIGERATOR.TITLE"
+msgid "Big Refrigerator Capacity (kg)"
+msgstr "大型冰箱容量 (kg)"
+
+#. BigStorage.STRINGS.UI.CAPACITY.BIGREFRIGERATOR.TOOLTIP
+msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGREFRIGERATOR.TOOLTIP"
+msgid "Determines the capacity of the Big Refrigerator"
+msgstr "决定大型冰箱的容量"
+
+#. BigStorage.STRINGS.UI.CAPACITY.BIGSMARTSTORAGELOCKER.TITLE
+msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGSMARTSTORAGELOCKER.TITLE"
+msgid "Big Smart Storage Bin Capacity (kg)"
+msgstr "大型智能存储箱容量(kg)"
+
+#. BigStorage.STRINGS.UI.CAPACITY.BIGSMARTSTORAGELOCKER.TOOLTIP
+msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGSMARTSTORAGELOCKER.TOOLTIP"
+msgid "Determines the capacity of the Big Smart Storage Bin"
+msgstr "决定大型智能存储箱的容量"
+
+#. BigStorage.STRINGS.UI.CAPACITY.BIGSTORAGELOCKER.TITLE
+msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGSTORAGELOCKER.TITLE"
+msgid "Big Storage Bin Capacity (kg)"
+msgstr "大型存储箱容量(kg)"
+
+#. BigStorage.STRINGS.UI.CAPACITY.BIGSTORAGELOCKER.TOOLTIP
+msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGSTORAGELOCKER.TOOLTIP"
+msgid "Determines the capacity of the Big Storage Bin"
+msgstr "决定大型存储箱的容量"
+
+#. BigStorage.STRINGS.UI.CAPACITY.BIGSTORAGETILE.TITLE
+msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGSTORAGETILE.TITLE"
+msgid "Big Storage Tile Capacity (kg)"
+msgstr "大型存储砖容量(kg)"
+
+#. BigStorage.STRINGS.UI.CAPACITY.BIGSTORAGETILE.TOOLTIP
+msgctxt "BigStorage.STRINGS.UI.CAPACITY.BIGSTORAGETILE.TOOLTIP"
+msgid "Determines the capacity of the Big Storage Tile"
+msgstr "决定大型存储砖的容量"
+
+#. BigStorage.STRINGS.UI.ENABLED.BIGREFRIGERATOR.TITLE
+msgctxt "BigStorage.STRINGS.UI.ENABLED.BIGREFRIGERATOR.TITLE"
+msgid "Enable Big Refrigerator"
+msgstr "启用大型冰箱"
+
+#. BigStorage.STRINGS.UI.ENABLED.BIGREFRIGERATOR.TOOLTIP
+msgctxt "BigStorage.STRINGS.UI.ENABLED.BIGREFRIGERATOR.TOOLTIP"
+msgid "Allows research and construction of the Big Refrigerator"
+msgstr "允许研究和建造大型冰箱"
