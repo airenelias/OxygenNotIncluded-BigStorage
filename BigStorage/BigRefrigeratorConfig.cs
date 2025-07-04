@@ -16,8 +16,8 @@ public class BigRefrigeratorConfig : IBuildingConfig
             "bigfridge_kanim",
             30,
             15f, // increased construction time
-            TUNING.BUILDINGS.CONSTRUCTION_MASS_KG.TIER5.Concat(TUNING.BUILDINGS.CONSTRUCTION_MASS_KG.TIER2), // increased price
-            MATERIALS.RAW_MINERALS.Concat(MATERIALS.RAW_METALS),
+            TUNING.BUILDINGS.CONSTRUCTION_MASS_KG.TIER3, // increased price
+            MATERIALS.REFINED_METALS,
             800f,
             BuildLocationRule.OnFloor,
             TUNING.BUILDINGS.DECOR.BONUS.TIER1,
@@ -41,6 +41,7 @@ public class BigRefrigeratorConfig : IBuildingConfig
         buildingDef.AudioCategory = "Metal";
         SoundEventVolumeCache.instance.AddVolume("fridge_kanim", "Refrigerator_open", NOISE_POLLUTION.NOISY.TIER1);
         SoundEventVolumeCache.instance.AddVolume("fridge_kanim", "Refrigerator_close", NOISE_POLLUTION.NOISY.TIER1);
+        buildingDef.AddSearchTerms(SEARCH_TERMS.FRIDGE);
         return buildingDef;
     }
 
@@ -62,7 +63,7 @@ public class BigRefrigeratorConfig : IBuildingConfig
         storage.fetchCategory = Storage.FetchCategory.GeneralStorage;
         storage.showCapacityStatusItem = true;
         Prioritizable.AddRef(go);
-        go.AddOrGet<TreeFilterable>();
+        go.AddOrGet<TreeFilterable>().allResourceFilterLabelString = UI.UISIDESCREENS.TREEFILTERABLESIDESCREEN.ALLBUTTON_EDIBLES;
         go.AddOrGet<FoodStorage>();
         go.AddOrGet<Refrigerator>();
         RefrigeratorController.Def def = go.AddOrGetDef<RefrigeratorController.Def>();

@@ -10,7 +10,7 @@ internal class BigSmartStorageLockerConfig : IBuildingConfig
 
     public override BuildingDef CreateBuildingDef()
     {
-        BuildingDef obj = BuildingTemplates.CreateBuildingDef(
+        BuildingDef buildingDef = BuildingTemplates.CreateBuildingDef(
             ID,
             1, 2,
             "bigsmartstoragelocker_kanim",
@@ -22,15 +22,15 @@ internal class BigSmartStorageLockerConfig : IBuildingConfig
             BuildLocationRule.OnFloor,
             TUNING.BUILDINGS.DECOR.NONE, // no decor penalty
             NOISE_POLLUTION.NONE);
-        obj.Floodable = false;
-        obj.AudioCategory = "Metal";
-        obj.Overheatable = false;
-        obj.ViewMode = OverlayModes.Logic.ID;
-        obj.RequiresPowerInput = true;
-        obj.AddLogicPowerPort = false;
-        obj.EnergyConsumptionWhenActive = 60f;
-        obj.ExhaustKilowattsWhenActive = 0.125f;
-        obj.LogicOutputPorts = new List<LogicPorts.Port>
+        buildingDef.Floodable = false;
+        buildingDef.AudioCategory = "Metal";
+        buildingDef.Overheatable = false;
+        buildingDef.ViewMode = OverlayModes.Logic.ID;
+        buildingDef.RequiresPowerInput = true;
+        buildingDef.AddLogicPowerPort = false;
+        buildingDef.EnergyConsumptionWhenActive = 60f;
+        buildingDef.ExhaustKilowattsWhenActive = 0.125f;
+        buildingDef.LogicOutputPorts = new List<LogicPorts.Port>
         {
             LogicPorts.Port.OutputPort(
                 FilteredStorage.FULL_PORT_ID,
@@ -40,7 +40,8 @@ internal class BigSmartStorageLockerConfig : IBuildingConfig
                 STRINGS.BUILDINGS.PREFABS.STORAGELOCKERSMART.LOGIC_PORT_INACTIVE,
                 show_wire_missing_icon: true)
         };
-        return obj;
+        buildingDef.AddSearchTerms(SEARCH_TERMS.STORAGE);
+        return buildingDef;
     }
 
     public override void DoPostConfigureComplete(GameObject go)

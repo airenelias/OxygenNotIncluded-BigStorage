@@ -3,7 +3,6 @@ using KMod;
 using PeterHan.PLib.AVC;
 using PeterHan.PLib.Core;
 using PeterHan.PLib.Options;
-using STRINGS;
 using System;
 using System.IO;
 using System.Reflection;

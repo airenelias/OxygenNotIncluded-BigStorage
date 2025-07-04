@@ -1,5 +1,6 @@
 ﻿using PeterHan.PLib.Options;
 using STRINGS;
+using System.Linq;
 using TUNING;
 using UnityEngine;
 
@@ -9,22 +10,23 @@ public class BigBeautifulStorageLockerConfig : IBuildingConfig
 
     public override BuildingDef CreateBuildingDef()
     {
-        BuildingDef obj = BuildingTemplates.CreateBuildingDef(
+        BuildingDef buildingDef = BuildingTemplates.CreateBuildingDef(
             ID,
             1, 2,
             "bigbeautifulstoragelocker_kanim",
             30,
             20f,  // increased construction time
-            TUNING.BUILDINGS.CONSTRUCTION_MASS_KG.TIER5.Concat(TUNING.BUILDINGS.CONSTRUCTION_MASS_KG.TIER2).Concat(TUNING.BUILDINGS.CONSTRUCTION_MASS_KG.TIER1), // increased price
-            MATERIALS.RAW_MINERALS.Concat(MATERIALS.RAW_METALS).Concat(MATERIALS.REFINED_METALS),
+            TUNING.BUILDINGS.CONSTRUCTION_MASS_KG.TIER4.Concat(new float[1] { 1f }), // increased price
+            MATERIALS.REFINED_METALS.Concat(MATERIALS.BUILDING_FIBER),
             1600f,
             BuildLocationRule.OnFloor,
             TUNING.BUILDINGS.DECOR.BONUS.TIER1, // increased decor
             NOISE_POLLUTION.NONE);
-        obj.Floodable = false;
-        obj.AudioCategory = "Metal";
-        obj.Overheatable = false;
-        return obj;
+        buildingDef.Floodable = false;
+        buildingDef.AudioCategory = "Metal";
+        buildingDef.Overheatable = false;
+        buildingDef.AddSearchTerms(SEARCH_TERMS.STORAGE);
+        return buildingDef;
     }
 
     public override void ConfigureBuildingTemplate(GameObject go, Tag prefab_tag)

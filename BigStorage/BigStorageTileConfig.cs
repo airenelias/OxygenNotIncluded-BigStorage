@@ -17,7 +17,7 @@ public class BigStorageTileConfig : IBuildingConfig
 
     public override BuildingDef CreateBuildingDef()
     {
-        BuildingDef obj = BuildingTemplates.CreateBuildingDef(
+        BuildingDef buildingDef = BuildingTemplates.CreateBuildingDef(
             ID,
             1, 1,
             "bigstoragetile_kanim",
@@ -29,17 +29,19 @@ public class BigStorageTileConfig : IBuildingConfig
             BuildLocationRule.Tile,
             TUNING.BUILDINGS.DECOR.NONE, // no decor penalty
             NOISE_POLLUTION.NONE);
-        BuildingTemplates.CreateFoundationTileDef(obj);
-        obj.Floodable = false;
-        obj.Entombable = false;
-        obj.Overheatable = false;
-        obj.UseStructureTemperature = false;
-        obj.AudioCategory = "Glass";
-        obj.AudioSize = "small";
-        obj.BaseTimeUntilRepair = -1f;
-        obj.SceneLayer = Grid.SceneLayer.TileMain;
-        obj.ConstructionOffsetFilter = BuildingDef.ConstructionOffsetFilter_OneDown;
-        return obj;
+        BuildingTemplates.CreateFoundationTileDef(buildingDef);
+        buildingDef.Floodable = false;
+        buildingDef.Entombable = false;
+        buildingDef.Overheatable = false;
+        buildingDef.UseStructureTemperature = false;
+        buildingDef.AudioCategory = "Glass";
+        buildingDef.AudioSize = "small";
+        buildingDef.BaseTimeUntilRepair = -1f;
+        buildingDef.SceneLayer = Grid.SceneLayer.TileMain;
+        buildingDef.AddSearchTerms(SEARCH_TERMS.TILE);
+        buildingDef.AddSearchTerms(SEARCH_TERMS.STORAGE);
+        buildingDef.ConstructionOffsetFilter = BuildingDef.ConstructionOffsetFilter_OneDown;
+        return buildingDef;
     }
 
     public override void ConfigureBuildingTemplate(GameObject go, Tag prefab_tag)
@@ -66,15 +68,16 @@ public class BigStorageTileConfig : IBuildingConfig
         treeFilterable.preventAutoAddOnDiscovery = true;
         StorageTile.Def def = go.AddOrGetDef<StorageTile.Def>();
         def.MaxCapacity = SingletonOptions<BigStorage.BigStorageConfig>.Instance.BigStorageTileCapacity; // custom capacity
-        def.specialItemCases = new StorageTile.SpecificItemTagSizeInstruction[2]
+        def.specialItemCases = new StorageTile.SpecificItemTagSizeInstruction[3]
         {
-            new StorageTile.SpecificItemTagSizeInstruction(GameTags.AirtightSuit, 0.5f),
-            new StorageTile.SpecificItemTagSizeInstruction(GameTags.Dehydrated, 0.6f)
+      new StorageTile.SpecificItemTagSizeInstruction(GameTags.AirtightSuit, 0.5f),
+      new StorageTile.SpecificItemTagSizeInstruction(GameTags.Dehydrated, 0.6f),
+      new StorageTile.SpecificItemTagSizeInstruction(GameTags.MoltShell, 0.5f)
         };
         go.AddOrGet<TileTemperature>();
         go.AddOrGet<BuildingHP>().destroyOnDamaged = true;
         Prioritizable.AddRef(go);
-        go.AddOrGetDef<RocketUsageRestriction.Def>();
+        go.AddOrGetDef<RocketUsageRestriction.Def>().restrictOperational = false;
     }
 
     public override void DoPostConfigureComplete(GameObject go)

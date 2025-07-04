@@ -9,22 +9,23 @@ public class BigStorageLockerConfig : IBuildingConfig
 
     public override BuildingDef CreateBuildingDef()
     {
-        BuildingDef obj = BuildingTemplates.CreateBuildingDef(
+        BuildingDef buildingDef = BuildingTemplates.CreateBuildingDef(
             ID,
             1, 2,
             "bigstoragelocker_kanim",
             30,
             15f, // increased construction time
-            TUNING.BUILDINGS.CONSTRUCTION_MASS_KG.TIER5.Concat(TUNING.BUILDINGS.CONSTRUCTION_MASS_KG.TIER2), // increased price
-            MATERIALS.RAW_MINERALS.Concat(MATERIALS.RAW_METALS),
+            TUNING.BUILDINGS.CONSTRUCTION_MASS_KG.TIER3, // increased price
+            MATERIALS.REFINED_METALS,
             1600f,
             BuildLocationRule.OnFloor,
             TUNING.BUILDINGS.DECOR.NONE, // no decor penalty
             NOISE_POLLUTION.NONE);
-        obj.Floodable = false;
-        obj.AudioCategory = "Metal";
-        obj.Overheatable = false;
-        return obj;
+        buildingDef.Floodable = false;
+        buildingDef.AudioCategory = "Metal";
+        buildingDef.Overheatable = false;
+        buildingDef.AddSearchTerms(SEARCH_TERMS.STORAGE);
+        return buildingDef;
     }
 
     public override void ConfigureBuildingTemplate(GameObject go, Tag prefab_tag)

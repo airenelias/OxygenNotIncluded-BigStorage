@@ -16,8 +16,8 @@ public class BigLiquidStorageConfig : IBuildingConfig
             "bigliquidstorage_kanim",
             100,
             180f,  // increased construction time
-            TUNING.BUILDINGS.CONSTRUCTION_MASS_KG.TIER5.Concat(TUNING.BUILDINGS.CONSTRUCTION_MASS_KG.TIER2), // increased price
-            MATERIALS.ALL_METALS.Concat(MATERIALS.REFINED_METALS),
+            TUNING.BUILDINGS.CONSTRUCTION_MASS_KG.TIER4, // increased price
+            MATERIALS.REFINED_METALS,
             800f,
             BuildLocationRule.OnFloor,
             TUNING.BUILDINGS.DECOR.NONE, // no decor penalty
@@ -39,6 +39,7 @@ public class BigLiquidStorageConfig : IBuildingConfig
                 STRINGS.BUILDINGS.PREFABS.SMARTRESERVOIR.LOGIC_PORT_INACTIVE)
         };
         GeneratedBuildings.RegisterWithOverlay(OverlayScreen.LiquidVentIDs, ID);
+        buildingDef.AddSearchTerms(SEARCH_TERMS.STORAGE);
         return buildingDef;
     }
 
