@@ -1,0 +1,52 @@
+{
+  "Tile": {
+    "Shale": {
+      "MainTex": "tile_shale_main",
+      "TopTex": "tile_shale_top"
+    }
+  },
+  "InsulationTile": {
+    "Shale": {
+      "MainTex": "insulation_shale_main"
+    }
+  },
+  "MeshTile": {
+    "NickelOre": {
+      "MainTex": "mesh_nickel_main",
+      "TopTex": "mesh_nickel_top",
+      "MainSpecular": "mesh_nickel_spec"
+    },
+    "Nickel": {
+      "MainTex": "mesh_nickel_main",
+      "MainSpecular": "mesh_nickel_spec"
+    },
+    "Iridium": {
+      "MainTex": "mesh_iridium_main",
+      "TopTex": "mesh_iridium_top",
+      "MainSpecular": "mesh_iridium_spec"
+    }
+  },
+  "GasPermeableMembrane": {
+    "NickelOre": {
+      "MainTex": "airflow_nickel_main"
+    },
+    "Nickel": {
+      "MainTex": "airflow_nickel_main"
+    },
+    "Iridium": {
+      "MainTex": "airflow_iridium_main"
+    }
+  },
+  "MetalTile": {
+    "Nickel": {
+      "MainTex": "metal_nickel_main",
+      "TopTex": "metal_nickel_top",
+      "MainSpecular": "metal_nickel_spec"
+    },
+    "Iridium": {
+      "MainTex": "metal_iridium_main",
+      "TopTex": "metal_iridium_top",
+      "MainSpecular": "metal_iridium_spec"
+    }
+  }
+}
