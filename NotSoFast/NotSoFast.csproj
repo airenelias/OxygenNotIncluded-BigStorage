@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4AC1C011-0683-73B9-C7F2-8F8D7C8DC826}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NotSoFast</RootNamespace>
+    <AssemblyName>NotSoFast</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GameFolder>D:\Steam\steamapps\common\OxygenNotIncluded</GameFolder>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony" HintPath="$(GameFolder)\OxygenNotIncluded_Data\Managed\0Harmony.dll" />
+    <Reference Include="Assembly-CSharp" HintPath="$(GameFolder)\OxygenNotIncluded_Data\Managed\Assembly-CSharp.dll" />
+    <Reference Include="Assembly-CSharp-firstpass" HintPath="$(GameFolder)\OxygenNotIncluded_Data\Managed\Assembly-CSharp-firstpass.dll" />
+    <Reference Include="UnityEngine" HintPath="$(GameFolder)\OxygenNotIncluded_Data\Managed\UnityEngine.dll" />
+    <Reference Include="UnityEngine.CoreModule" HintPath="$(GameFolder)\OxygenNotIncluded_Data\Managed\UnityEngine.CoreModule.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NotSoFastConfig.cs" />
+    <Compile Include="NotSoFastPatch.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="STRINGS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="mod.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="mod_info.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="preview.png" />
+    <None Include="translations\notsofast_template.pot" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ILRepack">
+      <Version>2.0.35</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="ILRepack.MSBuild.Task">
+      <Version>2.0.13</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="PLib">
+      <Version>4.17.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <WorkingDirectory>$(MSBuildThisFileDirectory)bin\$(Configuration)\$(TargetFramework)</WorkingDirectory>
+    <InstallFolder>$(WorkingDirectory)\$(ProjectName)</InstallFolder>
+  </PropertyGroup>
+  <Target Name="ILRepack" AfterTargets="Build">
+    <ItemGroup>
+      <InputAssemblies Include="$(WorkingDirectory)\PLib.dll" />
+    </ItemGroup>
+    <ILRepack TargetPlatformVersion="v4" OutputType="SameAsPrimaryAssembly" MainAssembly="$(TargetPath)" OutputAssembly="$(TargetPath)" InputAssemblies="@(InputAssemblies)" XmlDocumentation="true" Internalize="true" WilcardInputAssemblies="true" WorkingDirectory="$(GameFolder)\OxygenNotIncluded_Data\Managed" />
+  </Target>
+  <Target Name="CopyArtifactsToInstallFolder" AfterTargets="Build">
+    <ItemGroup>
+      <LocalizationFiles Include="$(WorkingDirectory)\translations\*.po" />
+      <YamlFiles Include="$(ProjectDir)\*.yaml" />
+    </ItemGroup>
+    <Copy SourceFiles="@(LocalizationFiles)" DestinationFiles="@(LocalizationFiles->'$(InstallFolder)\translations\%(Filename).po')" />
+    <Copy SourceFiles="@(YamlFiles)" DestinationFolder="$(InstallFolder)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(InstallFolder)\$(TargetFileName)" />
+    <Copy SourceFiles="preview.png" DestinationFiles="$(InstallFolder)\preview.png" />
+  </Target>
+  <Target Name="CompleteCleanup" AfterTargets="Clean">
+    <RemoveDir Directories="$(WorkingDirectory)\translations" />
+    <RemoveDir Directories="$(InstallFolder)" />
+  </Target>
+</Project>
