@@ -31,7 +31,7 @@ namespace NotSoFast
             public static void Prefix()
             {
                 // read the config file each time the game is loaded - so we don't need to restart all the game
-                NotSoFastConfig config = POptions.ReadSettings<NotSoFastConfig>();
+                NotSoFastConfig config = POptions.ReadSettings<NotSoFastConfig>() ?? new NotSoFastConfig();
                 SPEEDMULTIPLIER = config.Speed / 100f;
                 OVERSPEEDMULTIPLIER = config.Overspeed / 100f;
             }
