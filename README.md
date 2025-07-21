@@ -7,6 +7,10 @@ NotTooFast
 
 This mod reduces all walking/climbing animation speeds by half, making them less seizure-causing.
 
+ResourcesSearchHotkey
+
+Mouse-free check for resources. Resources screen hotkey and search box auto-select.
+
 PrehistoricTrueTilesAddon
 
 Low effort addon for True Tiles mod replacing Shale, Nickel, Iridium materials coming with PPP.
