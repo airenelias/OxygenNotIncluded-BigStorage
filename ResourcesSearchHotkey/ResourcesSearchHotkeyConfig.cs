@@ -9,6 +9,18 @@ namespace ResourcesSearchHotkey
         [JsonProperty]
         [Option("STRINGS.UI.FOCUS.TITLE",
             "STRINGS.UI.FOCUS.TOOLTIP",
+            "STRINGS.UI.CATEGORY.CODEX.TITLE")]
+        public bool FocusCodex { get; set; } = true;
+
+        [JsonProperty]
+        [Option("STRINGS.UI.REMEMBER.TITLE",
+            "STRINGS.UI.REMEMBER.TOOLTIP",
+            "STRINGS.UI.CATEGORY.CODEX.TITLE")]
+        public bool RememberCodex { get; set; } = true;
+
+        [JsonProperty]
+        [Option("STRINGS.UI.FOCUS.TITLE",
+            "STRINGS.UI.FOCUS.TOOLTIP",
             "STRINGS.UI.CATEGORY.DIAGNOSTICS.TITLE")]
         public bool FocusDiagnostics { get; set; } = true;
 

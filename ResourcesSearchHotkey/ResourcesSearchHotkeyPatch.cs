@@ -14,14 +14,17 @@ namespace ResourcesSearchHotkey
     public class ResourcesSearchHotkeyPatch : UserMod2
     {
         private static KInputTextField
+            CodexSearchField,
             DiagnosticsSearchField,
             ResourcesSearchField;
 
         private static string
+            CodexFilter,
             DiagnosticsFilter,
             ResourcesFilter;
 
         private static bool
+            CodexShown = false,
             DiagnosticsShown = false,
             ResourcesShown = false;
 
@@ -74,6 +77,14 @@ namespace ResourcesSearchHotkey
                 string screenType = __instance.GetType().Name;
                 switch (screenType)
                 {
+                    case "CodexScreen":
+                        CodexSearchField = Traverse.Create(__instance).Field("searchInputField").GetValue<KInputTextField>();
+                        if (Config.RememberCodex)
+                        {
+                            CodexSearchField.restoreOriginalTextOnEscape = false;
+                        }
+                        return;
+
                     case "AllDiagnosticsScreen":
                         DiagnosticsSearchField = Traverse.Create(__instance).Field("searchInputField").GetValue<KInputTextField>();
                         if (Config.RememberDiagnostics)
@@ -103,6 +114,14 @@ namespace ResourcesSearchHotkey
                     string screenType = __instance.GetType().Name;
                     switch (screenType)
                     {
+                        case "CodexScreen":
+                            if (Config.RememberCodex && CodexShown)
+                            {
+                                CodexFilter = CodexSearchField.text;
+                                CodexShown = false;
+                            }
+                            return;
+
                         case "AllDiagnosticsScreen":
                             if (Config.RememberDiagnostics && DiagnosticsShown)
                             {
@@ -129,6 +148,25 @@ namespace ResourcesSearchHotkey
                     string screenType = __instance.GetType().Name;
                     switch (screenType)
                     {
+                        case "CodexScreen":
+                            StopCamera();
+
+                            if (Config.RememberCodex)
+                            {
+                                CodexShown = true;
+                                CodexSearchField.text = CodexFilter;
+                            }
+                            else
+                            {
+                                CodexSearchField.text = string.Empty;
+                            }
+
+                            if (Config.FocusCodex)
+                            {
+                                CodexSearchField.Select();
+                            }
+                            return;
+
                         case "AllDiagnosticsScreen":
                             StopCamera();
 

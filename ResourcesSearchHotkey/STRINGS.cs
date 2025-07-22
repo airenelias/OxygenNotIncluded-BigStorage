@@ -6,6 +6,10 @@
         {
             public static class CATEGORY
             {
+                public static class CODEX
+                {
+                    public static LocString TITLE = "Database screen";
+                }
                 public static class DIAGNOSTICS
                 {
                     public static LocString TITLE = "Diagnostics screen";

@@ -3,6 +3,11 @@ msgstr ""
 "Application: Oxygen Not Included"
 "POT Version: 2.0"
 
+#. ResourcesSearchHotkey.STRINGS.UI.CATEGORY.CODEX.TITLE
+msgctxt "ResourcesSearchHotkey.STRINGS.UI.CATEGORY.CODEX.TITLE"
+msgid "Database screen"
+msgstr ""
+
 #. ResourcesSearchHotkey.STRINGS.UI.CATEGORY.DIAGNOSTICS.TITLE
 msgctxt "ResourcesSearchHotkey.STRINGS.UI.CATEGORY.DIAGNOSTICS.TITLE"
 msgid "Diagnostics screen"
