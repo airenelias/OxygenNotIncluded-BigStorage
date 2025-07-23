@@ -12,10 +12,12 @@ namespace NotSoFast
     public class NotSoFastPatch : UserMod2
     {
         // animation speed for dupes with zero athletic
-        private const float DEFAULTANIMSPEED = 1.25f;
+        private const float DefaultAnimSpeed = 1.25f;
+        // pole climbing animation speed multiplier
+        private const float PoleAnimMultiplier = 5f;
 
-        private static float SPEEDMULTIPLIER;
-        private static float OVERSPEEDMULTIPLIER;
+        private static float SpeedMultiplier;
+        private static float OverspeedMultiplier;
 
         public override void OnLoad(Harmony harmony)
         {
@@ -25,15 +27,15 @@ namespace NotSoFast
             new POptions().RegisterOptions(this, typeof(NotSoFastConfig));
         }
 
-        [HarmonyPatch(typeof(Game), "Load")]
-        public static class LoadPatch
+        [HarmonyPatch(typeof(Game), "OnSpawn")]
+        public static class GameOnSpawnPatch
         {
             public static void Prefix()
             {
                 // read the config file each time the game is loaded - so we don't need to restart all the game
                 NotSoFastConfig config = POptions.ReadSettings<NotSoFastConfig>() ?? new NotSoFastConfig();
-                SPEEDMULTIPLIER = config.Speed / 100f;
-                OVERSPEEDMULTIPLIER = config.Overspeed / 100f;
+                SpeedMultiplier = config.Speed / 100f;
+                OverspeedMultiplier = config.Overspeed / 100f;
             }
         }
 
@@ -42,14 +44,36 @@ namespace NotSoFast
         {
             public static void Postfix(ref Navigator.ActiveTransition transition)
             {
-                if (SPEEDMULTIPLIER != 1)
+                // skipping transition animations/jumps/climbing tiles etc.
+                if (transition.isLooping)
                 {
-                    transition.animSpeed *= SPEEDMULTIPLIER;
-                }
+                    bool running = (transition.start == NavType.Floor);
+                    bool climbingLadder = (transition.start == NavType.Ladder);
+                    bool climbingPole = (transition.start == NavType.Pole);
 
-                if (OVERSPEEDMULTIPLIER != 1 && transition.animSpeed > DEFAULTANIMSPEED)
-                {
-                    transition.animSpeed = DEFAULTANIMSPEED + ((transition.animSpeed - DEFAULTANIMSPEED) * OVERSPEEDMULTIPLIER);
+                    // skipping not movement animations
+                    if (!running && !climbingLadder && !climbingPole)
+                    {
+                        return;
+                    }
+
+                    // speeding up weirdly slow pole climbing animation
+                    if (climbingPole)
+                    {
+                        transition.animSpeed *= PoleAnimMultiplier;
+                    }
+
+                    // decreasing overall speed
+                    if (SpeedMultiplier != 1)
+                    {
+                        transition.animSpeed *= SpeedMultiplier;
+                    }
+
+                    //further decreasing fast dupes
+                    if (OverspeedMultiplier != 1 && transition.animSpeed > DefaultAnimSpeed)
+                    {
+                        transition.animSpeed = DefaultAnimSpeed + ((transition.animSpeed - DefaultAnimSpeed) * OverspeedMultiplier);
+                    }
                 }
             }
         }

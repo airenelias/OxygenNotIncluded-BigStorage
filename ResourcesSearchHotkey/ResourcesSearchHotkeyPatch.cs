@@ -58,7 +58,7 @@ namespace ResourcesSearchHotkey
         }
 
         [HarmonyPatch(typeof(Game), "OnSpawn")]
-        public static class OnSpawnPatch
+        public static class GameOnSpawnPatch
         {
             public static void Prefix()
             {
