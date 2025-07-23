@@ -5,7 +5,6 @@ using PeterHan.PLib.AVC;
 using PeterHan.PLib.Core;
 using PeterHan.PLib.Options;
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 
@@ -58,8 +57,8 @@ namespace ResourcesSearchHotkey
                 "ResourcesSearchHotkey.ResourcesShowAction", STRINGS.UI.HOTKEY.RESOURCES.TITLE, new PKeyBinding(KKeyCode.F, Modifier.Ctrl));
         }
 
-        [HarmonyPatch(typeof(Game), "Load")]
-        public static class LoadPatch
+        [HarmonyPatch(typeof(Game), "OnSpawn")]
+        public static class OnSpawnPatch
         {
             public static void Prefix()
             {
